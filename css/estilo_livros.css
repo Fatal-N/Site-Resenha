@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container-livros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.livro-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px; /* Ajuste a largura conforme necessário */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: #ffffff; /* Fundo branco */
+}
+
+.livro-item:hover {
+    transform: scale(1.05); /* Aumenta ao passar o mouse */
+}
+
+.hidden {
+    display: none;
+}
+
+.livro-descricao {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.livro-botao {
+    margin-top: 10px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+}

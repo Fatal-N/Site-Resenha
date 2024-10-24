@@ -1,5 +1,6 @@
 <?php
-// session_start(); // Inicia a sessão para gerenciar login de usuários
+include('db.php');
+session_start(); // Inicia a sessão para gerenciar login de usuários
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@
       <a href="listar_filmes.php">Ver Filmes Cadastrados</a>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['nome_exibicao']; ?>!</span>
+        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -103,8 +104,14 @@
 <footer class="rodape">
   <main class="map">
     <h1>Mapa do Site</h1>
+    <?php if (!isset($_SESSION['usuario_id'])) { ?>
+    <!-- Exibir "Cadastre-se" e "Efetue Login" se o usuário não estiver logado -->
     <a href="cadastro_usuario.php">Cadastre-se</a>
     <a href="login.php">Efetue Login</a>
+<?php } else { ?>
+    <!-- Exibir apenas o "Logout" se o usuário estiver logado -->
+    <a href="logout.php">Logout</a>
+<?php } ?>
     <p class="right"><b>Todos os direitos reservados &copy; 2024</b></p>
   </main>
 </footer>

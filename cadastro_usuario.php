@@ -29,8 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <link rel="stylesheet" href="css/estilocssforms.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/estilocssforms.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.cdnfonts.com/css/armstrong-2" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/copyright-violations?styles=35686" rel="stylesheet">

@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.filme-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px; /* Margem da página */
+}
+
+.filme-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px; /* Largura do card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.filme-card:hover {
+    transform: scale(1.05);
+}
+
+.filme-imagem {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+}
+
+.filme-titulo {
+    font-size: 16px; /* Tamanho da fonte do título */
+    color: #613f4f; /* Cor do título */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px;
+}
+
+.filme-sinopse {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.filme-botao {
+    background-color: #4CAF50; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    width: 100%; /* Largura total */
+    cursor: pointer; /* Cursor em forma de mão */
+    font-size: 14px; /* Tamanho da fonte do botão */
+    margin-top: 10px;
+    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+}
+
+.filme-botao:hover {
+    background-color: #45a049; /* Efeito hover no botão */
+}
