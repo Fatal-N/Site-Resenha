@@ -1,12 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
 .filme-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px; /* Margem da página */
+}
+.h1{
+    font-size: 30px;
 }
 
 .filme-card {
@@ -17,6 +16,7 @@ body {
     width: 200px; /* Largura do card */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    background-color: white;
 }
 
 .filme-card:hover {
@@ -39,12 +39,25 @@ body {
 .filme-sinopse {
     margin-top: 10px;
     font-size: 14px;
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Esconde o texto que excede o limite */
+    text-overflow: ellipsis; /* Adiciona "..." ao final do texto que excede */
+    max-width: 200px; /* Largura máxima da sinopse inicialmente */
+    transition: max-width 0.3s ease; /* Animação para a transição de largura */
+    max-height: 40px; /* Altura máxima da sinopse inicialmente */
+    overflow-y: hidden; /* Oculta a barra de rolagem vertical inicialmente */
+}
+
+.filme-sinopse.expanded {
+    white-space: normal; /* Permite quebra de linha quando expandido */
+    max-width: 500px; /* Largura máxima quando expandido */
+    max-height: 150px; /* Altura máxima quando expandido */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
 }
 
 .hidden {
-    display: none;
+    display: none; /* Esconde a sinopse inicialmente */
 }
-
 .filme-botao {
     background-color: #4CAF50; /* Cor do botão */
     color: white; /* Cor do texto do botão */

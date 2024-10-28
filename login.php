@@ -67,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php } ?>
         </div>
         <div class="redesocial">
-            <a href="https://facebook.com" class="faceb"><img src="imagens/icons/Facebook.webp" width="30px" height="30px"></a>
-            <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.webp" width="30px" height="30px"></a>
+            <a href="https://facebook.com" class="faceb"><img src="imagens/icons/Facebook.webp" width="29px" height="29px"></a>
+            <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
     </div>
 
@@ -88,4 +88,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </body>
+<footer class="rodape">
+  <main class="map">
+    <?php if (!isset($_SESSION['usuario_id'])) { ?>
+    <!-- Exibir "Cadastre-se" e "Efetue Login" se o usuário não estiver logado -->
+    <a href="cadastro_usuario.php">Cadastre-se</a>
+    <a href="login.php">Efetue Login</a>
+<?php } else { ?>
+    <!-- Exibir apenas o "Logout" se o usuário estiver logado -->
+    <a href="logout.php">Logout</a>
+<?php } ?>
+    <p class="right"><b>Todos os direitos reservados &copy; 2024</b></p>
+  </main>
+</footer>
 </html>

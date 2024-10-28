@@ -1,0 +1,27 @@
+.estrelas {
+    font-size: 40px; /* Ajuste o tamanho conforme necessário */
+    cursor: pointer;
+    border-radius: 0px;
+justify-content: center;
+align-items: center;
+margin-left: 122px;
+}
+
+.estrela {
+    color: white; /* Cor das estrelas cheias inicialmente */
+    transition: color 0.2s; /* Suaviza a transição de cor */
+}
+
+/* Efeito ao passar o mouse */
+.estrela:hover {
+    color: lightyellow; /* Cor ao passar o mouse */
+}
+
+/* Cor ao clicar */
+.estrela.amarela {
+    color: gold; /* Cor ao preencher as estrelas */
+}
+
+.estrela.branca {
+    color: white; /* Cor das estrelas vazias */
+}
