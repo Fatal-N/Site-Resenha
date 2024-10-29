@@ -13,9 +13,9 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="css/btn.css">
-  <link href="https://fonts.cdnfonts.com/css/armstrong-2" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/there-must-be" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/copyright-violations?styles=35686" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/devinne-swash" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/cinematografica" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -33,8 +33,8 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="resenha_filme.php">Criar Resenha  Filme</a>
-      <a href="resenha_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
+      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
@@ -73,23 +73,23 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
       <div class="carousel-inner">
 
         <div class="item active">
-          <img src="imagens/livros.jfif" alt="" style="width: 700px; height: 500px;">
-          <div class="carousel-caption">
-            <h3></h3>
-            <h4><h4>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="imagens/cinema-stuff-red-cloth.jpg" alt="" style="width: 700px; height: 500px;">
-          <div class="carousel-caption">
-            <h3></h3>
-            <h4><h4>
-          </div>
-        </div>
-
-        <div class="item">
           <img src="imagens/livros-filmes.jpg" alt="" style="width: 700px; height: 500px;">
+          <div class="carousel-caption">
+            <h3></h3>
+            <h4><h4>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="imagens/filmecine.jpg" alt="" style="width: 700px; height: 500px;">
+          <div class="carousel-caption">
+            <h3></h3>
+            <h4><h4>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="imagens/livros.jfif" alt="" style="width: 700px; height: 500px;">
           <div class="carousel-caption">
             <h3></h3>
             <h4><h4>

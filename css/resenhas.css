@@ -1,0 +1,60 @@
+.resenha-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.resenha-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resenha-imagem {
+    width: 100%;
+    height: auto;
+}
+
+.resenha-info {
+    padding: 15px;
+}
+
+.resenha-info h2 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.resenha-info p {
+    margin: 8px 0;
+}
+
+.resenha-info .nota {
+    color: #FFD700;
+    font-size: 18px;
+}
+.editar-resenha {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.editar-resenha a {
+    color: #007bff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.editar-resenha a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.editar-texto {
+    margin-left: 5px;
+    font-size: 14px;
+}

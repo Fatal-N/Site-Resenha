@@ -41,36 +41,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
     <link rel="stylesheet" href="css/estilocssforms.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.cdnfonts.com/css/armstrong-2" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/copyright-violations?styles=35686" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/devinne-swash" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="containermenu" width="1054px">
-        <div class="mymenu">
-            <a href="index2.php">Início</a>
-            <a href="cadastro_livro.php">Cadastrar Livro</a>
-            <a href="cadastro_filme.php">Cadastrar Filme</a>
-            <a href="listar_livros.php">Ver Livros Cadastrados</a>
-            <a href="listar_filmes.php">Ver Filmes Cadastrados</a>
-            <?php if (isset($_SESSION['usuario_id'])) { ?>
-                <!-- Se o usuário estiver logado -->
-                <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
-                <a href="logout.php">Logout</a>
-            <?php } else { ?>
-                <!-- Se o usuário não estiver logado -->
-                <a href="cadastro_usuario.php">Cadastre-se</a>
-                <a href="login.php">Login</a>
-            <?php } ?>
-        </div>
-        <div class="redesocial">
+<div class="containermenu" width="1054px">
+    <div class="mymenu">
+      <a href="index2.php" class="faceb"><img src="imagens/icons/homepag.png" width="40px" height="40px"></a>
+      <a href="cadastro_livro.php">Cadastrar Livro</a>
+      <a href="cadastro_filme.php">Cadastrar Filme</a>
+      <a href="listar_livros.php">Livros Cadastrados</a>
+      <a href="listar_filmes.php">Filmes Cadastrados</a>
+      <div class="dropdown">
+      <button class="dropbtn">Resenhas 🠋</button>
+      <div class="dropdown-content">
+      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
+      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
+      <a href="listar_resenhas_livro.php">Resenhas Livros</a>
+      </div>
+      </div>
+      <?php if (isset($_SESSION['usuario_id'])) { ?>
+        <!-- Se o usuário estiver logado -->
+        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <a href="logout.php">Logout</a>
+      <?php } else { ?>
+        <!-- Se o usuário não estiver logado -->
+        <a href="cadastro_usuario.php">Cadastre-se</a>
+        <a href="login.php">Login</a>
+      <?php } ?>
+  </div>
+  <div class="redesocial">
             <a href="https://facebook.com" class="faceb"><img src="imagens/icons/Facebook.webp" width="29px" height="29px"></a>
             <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
-    </div>
+  </div>
 
     <div class="container-global">
         <form class="formulario" action="login.php" method="POST">

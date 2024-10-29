@@ -1,4 +1,7 @@
-<?php include('db.php'); ?> 
+<?php include('db.php'); 
+session_start();
+?> 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +9,7 @@
     <title>Lista de Filmes</title>
     <link rel="stylesheet" href="css/estilo_filmes.css"> <!-- Link para o CSS separado -->
     <link rel="stylesheet" href="css/estilo.css">
-    <!-- <link rel="stylesheet" href="css/estilocssforms.css"> -->
+    <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/btn.css">
     <!-- <link rel="stylesheet" href="css/carousel.css"> -->
@@ -22,8 +25,8 @@
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="resenha_filme.php">Criar Resenha  Filme</a>
-      <a href="resenha_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
+      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>

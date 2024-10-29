@@ -1,26 +1,41 @@
-.container-livros {
+/* CSS para a lista de livros */
+.livro-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 20px; /* Margem da página */
 }
 
-.livro-item {
+.h1 {
+    font-size: 30px;
+}
+
+.livro-card {
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 10px;
     padding: 10px;
-    width: 200px; /* Ajuste a largura conforme necessário */
+    width: 200px; /* Largura do card */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    background-color: #ffffff; 
+    background-color: white;
 }
 
-.livro-item:hover {
-    transform: scale(1.05); /* Aumenta ao passar o mouse */
+.livro-card:hover {
+    transform: scale(1.05);
 }
 
-.hidden {
-    display: none;
+.livro-imagem {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+}
+
+.livro-titulo {
+    font-size: 16px; /* Tamanho da fonte do título */
+    color: #613f4f; /* Cor do título */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px;
 }
 
 .livro-sinopse {
@@ -41,11 +56,24 @@
     max-height: 150px; /* Altura máxima quando expandido */
     overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
 }
+
+.hidden {
+    display: none; /* Esconde a sinopse inicialmente */
+}
+
 .livro-botao {
+    background-color: #4CAF50; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    width: 100%; /* Largura total */
+    cursor: pointer; /* Cursor em forma de mão */
+    font-size: 14px; /* Tamanho da fonte do botão */
     margin-top: 10px;
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
-    background-color: transparent;
-    border: none;
+    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+}
+
+.livro-botao:hover {
+    background-color: #45a049; /* Efeito hover no botão */
 }
