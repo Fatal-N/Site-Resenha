@@ -35,7 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <!-- <link rel="stylesheet" href="css/carousel.css"> -->
   <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ketika" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/copyright-violations?styles=35686" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -49,15 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -70,15 +72,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
   </div>
-    <div class="container-global">
+    <div class="fundo-formulario">
         <form class="formulario" action="cadastro_usuario.php" method="POST">
-            <label>NOME</label>
+        <h1>CADASTRO</h1>
+          
             <input type="text" name="nome_exibicao" placeholder="Insira seu login" required>
             <br>
-            <label>EMAIL</label>
-            <input type="email" name="txtemail" placeholder="Digite seu email" required>
+
+            <input type="email" name="txtemail" placeholder="Digite seu e-mail" required>
             <br>
-            <label>SENHA</label>
+
             <input type="password" name="txtsenha" placeholder="Crie uma senha" required>
             <br>
             <button type="submit">Criar Conta</button>

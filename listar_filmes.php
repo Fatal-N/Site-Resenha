@@ -2,6 +2,7 @@
 session_start();
 ?> 
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +11,9 @@ session_start();
     <link rel="stylesheet" href="css/estilo_filmes.css"> <!-- Link para o CSS separado -->
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/manjari-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/abyzou" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/btn.css">
     <!-- <link rel="stylesheet" href="css/carousel.css"> -->
@@ -25,15 +29,15 @@ session_start();
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -46,7 +50,7 @@ session_start();
             <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
   </div>
-    <h1>Filmes Cadastrados</h1>
+    <h1 id="nominho">Aqui estão registrados todos os filmes registrados em nosso site até o momento.</h1>
     <div class="filme-container">
         <?php
         $sql_filmes = "SELECT * FROM tb_filmes";
@@ -55,7 +59,7 @@ session_start();
             echo "<div class='filme-card'>";
             echo "<img src='uploads/{$filme['imagem']}' alt='{$filme['titulo']}' class='filme-imagem' />";
             echo "<div class='filme-titulo'>{$filme['titulo']}</div>";
-            echo "<p>Ano de Lançamento: {$filme['ano_lancamento']}</p>";
+            echo "<p class='datinha'>Ano de Lançamento: {$filme['ano_lancamento']}</p>";
             echo "<div class='filme-sinopse hidden' id='desc_filme_{$filme['id']}'>{$filme['descricao']}</div>";
             echo "<button class='filme-botao' onclick='toggleDescription(\"desc_filme_{$filme['id']}\")'>Ver Sinopse</button>";
             echo "<button class='filme-botao' onclick='location.href=\"resenha_filme.php?filme_id={$filme['id']}\"'>Fazer Resenha</button>";

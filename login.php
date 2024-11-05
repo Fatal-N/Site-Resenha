@@ -41,13 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
     <link rel="stylesheet" href="css/estilocssforms.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
     <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ketika" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="fundologinn">
 <div class="containermenu" width="1054px">
     <div class="mymenu">
       <a href="index2.php" class="faceb"><img src="imagens/icons/homepag.png" width="40px" height="40px"></a>
@@ -58,15 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -80,17 +82,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
   </div>
 
-    <div class="container-global">
+    <div class="fundo-formulario">
         <form class="formulario" action="login.php" method="POST">
             <h1>Login</h1>
             <input type="email" name="txtemail" placeholder="E-mail" required><br>
             <input type="password" name="txtsenha" placeholder="Senha" required><br>
             <button type="submit">Login</button>
-            <p>Não é registrado ainda? <a href="cadastro_usuario.php">Cadastre-se</a></p>
+            <br>
+            <br>
+            <p class="pzin">Não é registrado ainda? <a href="cadastro_usuario.php">Cadastre-se</a></p>
 
             <?php
             if (isset($_GET['msg'])) {
-                echo '<p>' . $_GET['msg'] . '</p>';
+                echo '<p class="pzin">' . $_GET['msg'] . '</p>';
             }
             ?>
         </form>

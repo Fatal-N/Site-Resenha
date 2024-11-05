@@ -33,15 +33,15 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -73,7 +73,7 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
       <div class="carousel-inner">
 
         <div class="item active">
-          <img src="imagens/livros-filmes.jpg" alt="" style="width: 700px; height: 500px;">
+          <img src="imagens/bilheteria.jpg" alt="" style="width: 700px; height: 500px;">
           <div class="carousel-caption">
             <h3></h3>
             <h4><h4>
@@ -81,7 +81,7 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
         </div>
 
         <div class="item">
-          <img src="imagens/filmecine.jpg" alt="" style="width: 700px; height: 500px;">
+          <img src="imagens/livrinhos.jpeg" alt="" style="width: 700px; height: 500px;">
           <div class="carousel-caption">
             <h3></h3>
             <h4><h4>
@@ -89,7 +89,7 @@ session_start(); // Inicia a sessão para gerenciar login de usuários
         </div>
 
         <div class="item">
-          <img src="imagens/livros.jfif" alt="" style="width: 700px; height: 500px;">
+          <img src="imagens/livrosefilmes.jpg" alt="" style="width: 700px; height: 500px;">
           <div class="carousel-caption">
             <h3></h3>
             <h4><h4>

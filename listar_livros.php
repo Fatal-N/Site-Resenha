@@ -8,6 +8,9 @@ session_start();?>
     <link rel="stylesheet" href="css/estilo_livros.css"> <!-- Link para o CSS separado -->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.cdnfonts.com/css/manjari-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/abyzou" rel="stylesheet">
     <link rel="stylesheet" href="css/btn.css">
     <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
 
@@ -23,14 +26,14 @@ session_start();?>
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <a href="cadastro_usuario.php">Cadastre-se</a>
@@ -42,7 +45,7 @@ session_start();?>
             <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
   </div>
-    <h1 class="h1">Livros Cadastrados</h1>
+    <h1 id="nominho">Aqui estão registrados todos os livros registrados em nosso site até o momento.</h1>
     <div class="livro-container">
         <?php
         $sql_livros = "SELECT * FROM tb_livros";
@@ -54,7 +57,7 @@ session_start();?>
                 echo "<div class='livro-card'>";
                 echo "<img src='uploads/{$livro['imagem']}' alt='{$livro['titulo']}' class='livro-imagem' />";
                 echo "<div class='livro-titulo'>{$livro['titulo']}</div>";
-                echo "<p>Data de Publicação: {$livro['data_publicacao']}</p>";
+                echo "<p class='datinha'>Data de Publicação: {$livro['data_publicacao']}</p>";
                 echo "<div class='livro-sinopse hidden' id='desc_livro_{$livro['id']}'>{$livro['descricao']}</div>";
                 echo "<button class='livro-botao' onclick='toggleDescription(\"desc_livro_{$livro['id']}\")'>Ver Sinopse</button>";
                 echo "<button class='livro-botao' onclick='location.href=\"resenha_livro.php?livro_id={$livro['id']}\"'>Fazer Resenha</button>";

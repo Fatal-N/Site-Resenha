@@ -44,14 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/estilo.css">
   <link rel="stylesheet" href="css/estilocssforms.css">
+  <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.cdnfonts.com/css/althafia-display" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
-  <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="css/btn.css">
-  <title>Cadastrar Livro</title>
+  <title>Cadastrar Livros</title>
 </head>
 
-<body>
+<body class="livrofundow">
 <div class="containermenu" width="1054px">
     <div class="mymenu">
       <a href="index2.php" class="faceb"><img src="imagens/icons/homepag.png" width="40px" height="40px"></a>
@@ -62,15 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -85,6 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </div>
   <div class="container-glob">
     <form class="formulario1" action="cadastro_livro.php" method="POST" enctype="multipart/form-data">
+      <label>Cadastrar Livro</label>
+      <br>
       <input type="text" name="titulo" placeholder="Título" required><br>
       <input type="text" name="autor" placeholder="Autor" required><br>
       <label for="genero">Gênero:</label>
@@ -137,7 +140,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 <footer class="rodape">
   <main class="map">
-    <h1>Mapa do Site</h1>
     <?php if (!isset($_SESSION['usuario_id'])) { ?>
       <!-- Exibir "Cadastre-se" e "Efetue Login" se o usuário não estiver logado -->
       <a href="cadastro_usuario.php">Cadastre-se</a>

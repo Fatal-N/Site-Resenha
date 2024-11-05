@@ -3,7 +3,10 @@
 .mainpage {
     margin: 0;
     padding: 0;
-    background-image: url(img/Wallpaper.jpg);
+    background-image: url(../imagens/backgroundm1.png);
+    background-size: cover; 
+     /* background-repeat: no-repeat;  */
+    /* background-position: center;   */
 }
 .filmefundo {
     margin: 0;
@@ -12,6 +15,15 @@
      background-size: cover; 
     /* background-position: center;  */
     background-repeat: no-repeat; 
+}
+    
+.fundologinn{
+    margin: 0;
+    padding: 0;
+    background-image: url(../imagens/fundologin.png);
+    background-size: cover; 
+    /* background-position: center;  */
+    background-repeat: no-repeat;
 }
 .livrofundo {
     margin: 0;
@@ -38,8 +50,6 @@
 .redesocial{
     display: flex;
     justify-content: space-between;
-    /* width: 50px;
-    height: 50px; */
     margin-right: 10px;
     margin-top: 10px;
 }
@@ -59,13 +69,13 @@
 }
 
 /* Menu */
-.containermenu{
+/* .containermenu{
     display: flex;
     justify-content: space-between;
     background-color: #080404;
-}
+} */
 /* Container onde ficam as informações */
-.mymenu{
+/* .mymenu{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -73,9 +83,9 @@
     height: 80px;
     font-family: 'Glorien Sans Serif', sans-serif;
     font-size: 22px;
-}
+} */
 /* Textos */
-.mymenu a{
+/* .mymenu a{
     border-radius: 10px;
     padding: 10px 15px 15px 15px;
     color: whitesmoke;
@@ -84,14 +94,107 @@
     background-color: #e9e9e9;
     color: #080404;
     text-decoration: none;
+} */
+
+.containermenu {
+    display: flex;
+    justify-content: center;
+    background-color: #140909; /* Preto como fundo */
+    padding: 20px 0; /* Espaçamento superior e inferior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
 }
+
+#nominho{ /*Nome H1*/
+    font-size: 30px;
+    color: white;
+    font-family: 'ABYZOU', sans-serif;
+    justify-content: center;
+    margin-left: 30px;
+    text-align: center;
+}
+#nominho2{ /*Nome H2*/
+    font-size: 22px;
+    color: white;
+    font-family: 'Isidora Sans Alt', sans-serif;
+    justify-content: center;
+    /* margin-left: 30px; */
+    text-align: center;
+}
+#nominho3{
+    font-size: 22px;
+    color: rgb(19, 19, 31);
+    font-family: 'Isidora Sans Alt', sans-serif;
+}
+
+.mymenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%; 
+    height: 80px; /* Altura original do menu */
+    font-family: 'Glorien Sans Serif', sans-serif;
+    font-size: 22px;
+}
+
+/* Estilizando os links do menu */
+.mymenu a {
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #e6e6e6; /* Cor do texto suave */
+    background-color: rgb(148, 2, 21); /* Bordô escuro */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animação suave */
+    position: relative; /* Necessário para o efeito de brilho */
+}
+
+/* Efeito ao passar o mouse */
+.mymenu a:hover {
+    background-color: #8d1126; /* Bordô mais claro para o hover */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    text-decoration: none;
+    transform: translateY(-3px); /* Levantar o link ao passar o mouse */
+}
+
+/* Adicionando um efeito de brilho ao menu */
+.mymenu a::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(60deg, rgba(128, 0, 32, 0.4), rgba(128, 0, 32, 0.2));
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    z-index: -1; /* Colocando atrás do texto */
+}
+
+.mymenu a:hover::before {
+    opacity: 1; /* Efeito de brilho ao passar o mouse */
+}
+
+.livrofundow{
+    margin: 0;
+    padding: 0;
+    background-image: url(../imagens/livroforms.png);
+    background-size: cover; 
+
+}
+.filmefundow{
+    margin: 0;
+    padding: 0;
+    background-image: url(../imagens/formsfilme.png);
+     background-size: cover; 
+    /* background-repeat: no-repeat;
+    background-position: center; */
+
+}
+
 /* Titulo do jogo */
 .nome-sit {
     justify-content: center;
     display: flex;
     font-size: 150px;
     font-family: 'Cinematografica', sans-serif;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
@@ -164,12 +267,20 @@
     height: auto; /* Mantém a proporção da imagem */
 }
 .livr-image{
-    border-radius: 0px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 125px;
+    border-radius: 0; /* Sem bordas arredondadas na imagem */
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
 }
-
+.livr-card {
+    border: 1px solid #ddd; /* Borda do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-left: 128px; /* Margem ao redor do card */
+    padding: 10px; /* Espaçamento interno do card */
+    width: 210px; /* Largura do card, um pouco maior que a imagem */
+    background-color: white; /* Fundo branco para o card */
+    display: flex; /* Usar flexbox para centralizar a imagem */
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+}
 /*Tratando do Slideshow*/
 /* .myslides{display:none;}
 
@@ -225,3 +336,7 @@
 @import url('https://fonts.cdnfonts.com/css/gorgeous-grafix');
 @import url('https://fonts.cdnfonts.com/css/there-must-be');
 @import url('https://fonts.cdnfonts.com/css/glorien-sans-serif');
+@import url('https://fonts.cdnfonts.com/css/ketika');
+@import url('https://fonts.cdnfonts.com/css/abyzou');
+@import url('https://fonts.cdnfonts.com/css/isidora-soft-alt');
+@import url('https://fonts.cdnfonts.com/css/code-new-roman-2');

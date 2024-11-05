@@ -6,12 +6,13 @@
 }
 
 .resenha-card {
-    width: 300px;
+    width: 250px;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 .resenha-imagem {
@@ -57,4 +58,8 @@
 .editar-texto {
     margin-left: 5px;
     font-size: 14px;
+}
+.listarstyl{
+    font-family: 'Manjari', sans-serif;
+    font-size:15px;
 }

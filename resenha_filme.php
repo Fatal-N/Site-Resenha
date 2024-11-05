@@ -58,14 +58,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/btn.css">
     <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/isidora-soft-alt" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/abyzou" rel="stylesheet">
     <link rel="stylesheet" href="css/cssstars.css">
     <link rel="stylesheet" href="css/estilocssforms.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/carousel.css">
     
-    <title>Resenha do Filme</title>
+    <title>Avaliação Filmes</title>
 </head>
-<body>
+<body class="filmefundow">
 <div class="containermenu" width="1054px">
     <div class="mymenu">
       <a href="index2.php" class="faceb"><img src="imagens/icons/homepag.png" width="40px" height="40px"></a>
@@ -76,15 +78,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="dropdown">
       <button class="dropbtn">Resenhas 🠋</button>
       <div class="dropdown-content">
-      <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-      <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+      <a href="listar_filmes.php">Criar Resenha  Filme</a>
+      <a href="listar_livros.php">Criar Resenha  Livro</a>
       <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
       <a href="listar_resenhas_livro.php">Resenhas Livros</a>
       </div>
       </div>
       <?php if (isset($_SESSION['usuario_id'])) { ?>
         <!-- Se o usuário estiver logado -->
-        <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+        <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
         <a href="logout.php">Logout</a>
       <?php } else { ?>
         <!-- Se o usuário não estiver logado -->
@@ -95,7 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </div>
     <div class="container-glob">
         <form class="formulario1" action="resenha_filme.php?filme_id=<?php echo $filme_id; ?>" method="POST">
-        <h2>Resenha do Filme: <?php echo $filme['titulo']; ?></h2>
+        <h2 id="nominho2"><?php echo $filme['titulo']; ?></h2>
+        <br>
         <div class = "film-card">
         <img class="film-image" src="uploads/<?php echo $filme['imagem']; ?>" alt="<?php echo $filme['titulo']; ?>"style="width:200px; height:auto;">
         </div>
@@ -134,11 +137,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     });
 </script>
 </form>
-    </div>
+</div>
 </body>
 <footer class="rodape">
     <main class="map">
-        <h1>Mapa do Site</h1>
         <?php if (!isset($_SESSION['usuario_id'])) { ?>
             <a href="cadastro_usuario.php">Cadastre-se</a>
             <a href="login.php">Efetue Login</a>

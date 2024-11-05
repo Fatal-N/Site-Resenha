@@ -8,7 +8,12 @@ session_start();?>
     <link rel="stylesheet" href="css/estilo_livros.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/cssstars.css">
     <link href="https://fonts.cdnfonts.com/css/glorien-sans-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/manjari-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/isidora-soft-alt" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/abyzou" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/resenhas.css">
 </head>
@@ -23,23 +28,27 @@ session_start();?>
             <div class="dropdown">
                 <button class="dropbtn">Resenhas 🠋</button>
                 <div class="dropdown-content">
-                <a href="listar_resenhas_filme.php">Criar Resenha  Filme</a>
-                <a href="listar_resenhas_livro.php">Criar Resenha  Livro</a>
+                <a href="listar_filmes.php">Criar Resenha  Filme</a>
+                <a href="listar_livros.php">Criar Resenha  Livro</a>
                     <a href="listar_resenhas_filme.php">Resenhas Filmes</a>
                     <a href="listar_resenhas_livro.php">Resenhas Livros</a>
                 </div>
             </div>
             <?php if (isset($_SESSION['usuario_id'])) { ?>
-                <span>Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
+                <span style="color: #d8d4d5;">Bem-vindo, <?php echo $_SESSION['usu_login']; ?>!</span>
                 <a href="logout.php">Logout</a>
             <?php } else { ?>
                 <a href="cadastro_usuario.php">Cadastre-se</a>
                 <a href="login.php">Login</a>
             <?php } ?>
         </div>
+        <div class="redesocial">
+            <a href="https://facebook.com" class="faceb"><img src="imagens/icons/Facebook.webp" width="29px" height="29px"></a>
+            <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
+        </div>
     </div>
 
-    <h1>Resenhas de Livros</h1>
+    <h1 id="nominho">Essa página é dedicada às avaliações dos usuários referente aos livros. Sinta-se a vontade para criar uma resenha!</h1>
     <div class="resenha-container">
         <?php
         $sql_resenhas = "SELECT rl.*, u.usu_login, l.titulo, l.imagem 
@@ -52,10 +61,10 @@ session_start();?>
             echo "<div class='resenha-card'>";
             echo "<img src='uploads/{$resenha['imagem']}' alt='{$resenha['titulo']}' class='resenha-imagem' />";
             echo "<div class='resenha-info'>";
-            echo "<h2>{$resenha['titulo']}</h2>";
-            echo "<p><strong>Autor:</strong> {$resenha['usu_login']}</p>";
-            echo "<p><strong>Nota:</strong> " . str_repeat("⭐", $resenha['nota']) . "</p>";
-            echo "<p><strong>Comentário:</strong> {$resenha['comentario']}</p>";
+            echo "<h2 id='nominho3'>{$resenha['titulo']}</h2>";
+            echo "<p class='listarstyl'><strong>Autor:</strong> {$resenha['usu_login']}</p>";
+            echo "<p class='listarstyl'><strong>Nota:</strong> " . str_repeat("⭐", $resenha['nota']) . "</p>";
+            echo "<p class='listarstyl'><strong>Comentário:</strong> {$resenha['comentario']}</p>";
 
             // Exibir ícone de edição apenas para o autor da resenha
             if (isset($_SESSION['usuario_id']) && $_SESSION['usuario_id'] == $resenha['usuario_id']) {
