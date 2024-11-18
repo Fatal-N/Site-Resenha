@@ -14,9 +14,13 @@
     margin: 10px;
     padding: 10px;
     width: 200px; /* Largura do card */
+    height: 600px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     background-color: white;
+    display: flex;
+    overflow: hidden; /* Evita que a sinopse afete o layout do card */
+    flex-direction: column; /* Alinha os itens na vertical */
 }
 
 .filme-card:hover {
@@ -53,7 +57,7 @@
 .filme-sinopse.expanded {
     white-space: normal; /* Permite quebra de linha quando expandido */
     max-width: 500px; /* Largura máxima quando expandido */
-    max-height: 150px; /* Altura máxima quando expandido */
+    max-height: 100px; /* Altura máxima quando expandido */
     overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
 }
 
@@ -83,5 +87,10 @@
     font-weight: bold;
     font-style: oblique;
 }
-
+.filme-genero{
+    font-family: 'Manjari', sans-serif;
+    font-size:12px;
+    font-weight:unset, bold;
+    color: rgb(20, 20, 20);
+}
 @import url('https://fonts.cdnfonts.com/css/manjari-2');

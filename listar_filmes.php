@@ -50,7 +50,7 @@ session_start();
             <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
   </div>
-    <h1 id="nominho">Aqui estão registrados todos os filmes registrados em nosso site até o momento.</h1>
+    <h1 id="nominho">Aqui estão listados todos os filmes registrados em nosso site até o momento.</h1>
     <div class="filme-container">
         <?php
         $sql_filmes = "SELECT * FROM tb_filmes";
@@ -60,25 +60,38 @@ session_start();
             echo "<img src='uploads/{$filme['imagem']}' alt='{$filme['titulo']}' class='filme-imagem' />";
             echo "<div class='filme-titulo'>{$filme['titulo']}</div>";
             echo "<p class='datinha'>Ano de Lançamento: {$filme['ano_lancamento']}</p>";
+            echo "<p class='filme-genero'>Gênero: {$filme['genero']}</p>";
             echo "<div class='filme-sinopse hidden' id='desc_filme_{$filme['id']}'>{$filme['descricao']}</div>";
             echo "<button class='filme-botao' onclick='toggleDescription(\"desc_filme_{$filme['id']}\")'>Ver Sinopse</button>";
             echo "<button class='filme-botao' onclick='location.href=\"resenha_filme.php?filme_id={$filme['id']}\"'>Fazer Resenha</button>";
+            echo "<a href='relatar_problema_filme.php?filme_id={$filme['id']}' style='color: blue; text-decoration: underline; cursor: pointer;'>Relatar Problema</a>";
             echo "</div>";
         }
         ?>
     </div>
+    <button onclick="location.href='relatar_problema_filme.php?filme_id=<?php echo $filme['id']; ?>'">Relatar Problema</button>
 
     <script>
 function toggleDescription(id) {
     const sinopse = document.getElementById(id);
-    if (sinopse.classList.contains('hidden')) {
-        sinopse.classList.remove('hidden'); // Remove a classe hidden para mostrar
-        sinopse.classList.add('expanded'); // Adiciona a classe expanded para expandir
+
+    // Se a sinopse já estiver expandida, vamos recolhê-la
+    if (sinopse.classList.contains('expanded')) {
+        sinopse.classList.remove('expanded');
+        sinopse.classList.add('hidden');
     } else {
-        sinopse.classList.remove('expanded'); // Remove a classe expanded
-        sinopse.classList.add('hidden'); // Adiciona a classe hidden para esconder
+        // Recolher todas as outras sinopses expandidas
+        document.querySelectorAll('.filme-sinopse.expanded').forEach((expandedSinopse) => {
+            expandedSinopse.classList.remove('expanded');
+            expandedSinopse.classList.add('hidden');
+        });
+
+        // Expandir a sinopse do card clicado
+        sinopse.classList.remove('hidden');
+        sinopse.classList.add('expanded');
     }
 }
+
 </script>
 
 </body>

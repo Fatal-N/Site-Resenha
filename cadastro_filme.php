@@ -15,14 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $ano_lancamento = $_POST['ano_lancamento'];
   $descricao = $_POST['descricao'];
   $imagem = $_FILES['imagem']['name'];
+  $usuario_id = $_SESSION['usuario_id'];
 
   // Caminho para salvar a imagem
   $destino = "uploads/" . basename($imagem);
   move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
 
   // Preparar a consulta SQL
-  $stmt = $link->prepare("INSERT INTO tb_filmes (titulo, diretor, genero, ano_lancamento, descricao, imagem) VALUES (?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param("ssssss", $titulo, $diretor, $genero, $ano_lancamento, $descricao, $imagem);
+  $stmt = $link->prepare("INSERT INTO tb_filmes (titulo, diretor, genero, ano_lancamento, descricao, imagem, usuario_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
+  $stmt->bind_param("ssssssi", $titulo, $diretor, $genero, $ano_lancamento, $descricao, $imagem, $usuario_id);
 
   // Executar a consulta
   if ($stmt->execute()) {

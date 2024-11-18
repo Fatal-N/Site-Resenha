@@ -45,7 +45,7 @@ session_start();?>
             <a href="https://instagram.com" class="insta"><img src="imagens/icons/instagramicon.png" width="34px" height="34px"></a>
         </div>
   </div>
-    <h1 id="nominho">Aqui estão registrados todos os livros registrados em nosso site até o momento.</h1>
+    <h1 id="nominho">Aqui estão listados todos os livros registrados em nosso site até o momento.</h1>
     <div class="livro-container">
         <?php
         $sql_livros = "SELECT * FROM tb_livros";
@@ -58,6 +58,7 @@ session_start();?>
                 echo "<img src='uploads/{$livro['imagem']}' alt='{$livro['titulo']}' class='livro-imagem' />";
                 echo "<div class='livro-titulo'>{$livro['titulo']}</div>";
                 echo "<p class='datinha'>Data de Publicação: {$livro['data_publicacao']}</p>";
+                echo "<p class='livro-genero'>Gênero: {$livro['genero']}</p>";
                 echo "<div class='livro-sinopse hidden' id='desc_livro_{$livro['id']}'>{$livro['descricao']}</div>";
                 echo "<button class='livro-botao' onclick='toggleDescription(\"desc_livro_{$livro['id']}\")'>Ver Sinopse</button>";
                 echo "<button class='livro-botao' onclick='location.href=\"resenha_livro.php?livro_id={$livro['id']}\"'>Fazer Resenha</button>";
